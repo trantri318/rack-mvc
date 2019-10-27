@@ -7,6 +7,7 @@ module Frack
     class << self
       def call(env)
         # Your code goes here...
+        ['200', {'Content-Type' => 'text/html'}, ['A barebones rack app.']]
       end
     end
   end
