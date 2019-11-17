@@ -10,7 +10,7 @@ module Frack
           Rack::Response.new(render 'welcome/index')
         elsif env['PATH_INFO']=='/users'
           @users = ['toan','son','tam','tu','tri']
-          Rack::Response.new(render 'users/index')
+          Rack::Response.new(UsersController.new.index)
         else
           Rack::Response.new('Not Found',404)
         end
