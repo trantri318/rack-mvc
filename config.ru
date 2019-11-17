@@ -10,7 +10,7 @@ module Frack
           Rack::Response.new(render 'welcome/index')
         elsif env['PATH_INFO']=='/users'
           @users = ['toan','son','tam','tu','tri']
-                 Rack::Response.new(render 'users/index')
+          Rack::Response.new(render 'users/index')
         else
           Rack::Response.new('Not Found',404)
         end
@@ -31,6 +31,13 @@ module Frack
     end
   end
 end
+
+  class UserController < Frack::BaseController
+    def index
+      @users = %w(Toan Tri Son Tu Tam)
+      render('users/index')
+    end
+  end
 
 use Rack::Static,root:'public',urls:['/images','/js','/css']
 use Rack::CommonLogger
