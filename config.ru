@@ -1,6 +1,5 @@
 $LOAD_PATH << '.'
-require 'rack'
-require 'tilt'
+require 'lib/frack'
 require 'app/models/user'
 require 'app/controllers/users_controller'
 require 'app/controllers/welcome_controller'
