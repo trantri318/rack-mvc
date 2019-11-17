@@ -7,7 +7,7 @@ module Frack
     class << self
       def call(env)
         if env['PATH_INFO'] == '/'
-          Rack::Response.new(render 'welcome/index')
+          Rack::Response.new(WelcomeController.new.index)
         elsif env['PATH_INFO']=='/users'
           @users = ['toan','son','tam','tu','tri']
           Rack::Response.new(UsersController.new.index)
@@ -36,6 +36,12 @@ class UsersController < Frack::BaseController
   def index
     @users = %w(Toan Tri Son Tu Tam)
     render('users/index')
+  end
+end
+
+class WelcomeController < Frack::BaseController
+  def index
+    render('welcome/index')
   end
 end
 
