@@ -1,6 +1,19 @@
 $LOAD_PATH << File.expand_path(File.dirname(__FILE__))
+ENV['APP_ENV'] || 'development'
+
 require 'rack'
 require 'tilt'
+require 'erb'
+require 'active_record'
+require 'byebug'
+
+require_relative '../app/models/user'
+require_relative '../app/models/product'
+require_relative '../app/models/order'
+require_relative '../app/models/order_detail'
+require_relative '../app/models/category'
+
+require_relative '../config/database'
 
 module Frack
   autoload :Application, 'frack/application'
