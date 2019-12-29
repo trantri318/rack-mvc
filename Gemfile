@@ -6,6 +6,7 @@ gem 'puma'
 gem 'tilt'
 gem 'byebug'
 gem 'pg'
+gem 'bcrypt'
 gem 'activerecord'
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 

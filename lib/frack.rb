@@ -8,13 +8,14 @@ require 'erb'
 require 'active_record'
 require 'byebug'
 
+require_relative '../config/database'
+
+require_relative '../app/validators/category_validator'
 require_relative '../app/models/user'
 require_relative '../app/models/product'
 require_relative '../app/models/order'
 require_relative '../app/models/order_detail'
 require_relative '../app/models/category'
-
-require_relative '../config/database'
 
 module Frack
   autoload :Application, 'frack/application'
