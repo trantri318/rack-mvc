@@ -11,7 +11,7 @@ module Frack
         controller = env['controller']
         action = env['action']
         klass_controller = Object.const_get(controller)
-        obj_controller = klass_controller.new
+        obj_controller = klass_controller.new(env)
         obj_controller.public_send(action)
       end
     end

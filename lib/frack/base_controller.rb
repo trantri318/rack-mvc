@@ -1,5 +1,12 @@
 module Frack
   class BaseController
+    attr_reader :env, :request
+
+    def initialize(env)
+      @env = env
+      @request = Rack::Request.new(env)
+    end
+
     def render(view)
       render_template('layouts/application') do
         render_template(view)

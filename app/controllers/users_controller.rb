@@ -23,5 +23,4 @@ class UsersController < Frack::BaseController
   def user_params
     request.params['user']
   end
-
 end
