@@ -1,29 +1,36 @@
-<div class="row">
-  <div class="col-lg-offset-2">
-    <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
-      <div class="form-group">
-        <%= f.label :name, "Name", class: "col-md-2 control-label" %>
-        <div class="col-md-6">
-          <%= f.text_field :name, class: "form-control", placeholder: "Enter user name" %>
+<div class="container-fluid h-100 bg-light text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Sign up</h1>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <form action='/sign_up' method='post'>
+        <% if @user.errors.any? %>
+          <div class="bd-callout bd-callout-danger">
+            <% @user.errors.full_messages.each do |message| %>
+              <p class="text-danger">- <%= message %></p>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <label for="email1">Email address</label>
+          <input type="email" class="form-control" id="email" name='user[email]' aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :password, "Password", class: "col-md-2 control-label" %>
-        <div class="col-md-6">
-          <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name='user[password]' placeholder="Password">
         </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation, "Password Confirmation", class: "col-md-2 control-label" %>
-        <div class="col-md-6">
-          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Enter password confirmation" %>
+        <div class="form-group">
+          <label for="password_confirmation">Password Confirmation</label>
+          <input type="password" class="form-control" id="password_confirmation" placeholder="Password Confirmation">
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-offset-4">
-          <%= f.submit "Register", class: "btn btn-success" %>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="remember_me">
+          <label class="form-check-label" for="remember_me">Remember me</label>
         </div>
-      </div>
-    <% end %>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
