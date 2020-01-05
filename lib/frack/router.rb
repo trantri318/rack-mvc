@@ -3,7 +3,8 @@ module Frack
     attr_reader :app
     ROUTES = {
       '/' => 'WelcomeController#index',
-      '/users' => 'UsersController#index'
+      '/users' => 'UsersController#index',
+      '/sign_up' => 'UsersController#new'
     }
 
     def initialize(app)

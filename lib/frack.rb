@@ -11,6 +11,7 @@ require 'byebug'
 require_relative '../config/database'
 
 require_relative '../app/validators/category_validator'
+
 require_relative '../app/models/user'
 require_relative '../app/models/product'
 require_relative '../app/models/order'
@@ -22,3 +23,6 @@ module Frack
   autoload :BaseController, 'frack/base_controller'
   autoload :Router, 'frack/router'
 end
+
+require_relative '../app/controllers/users_controller'
+require_relative '../app/controllers/welcome_controller'
