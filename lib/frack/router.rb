@@ -26,7 +26,7 @@ module Frack
     end
 
     def call(env)
-      route = ROUTES.find {|i| i[:request_method] == env['REQUEST_METHOD'] && i[:request_path] == env['PATH_INFO']})
+      route = ROUTES.find {|i| i[:request_method] == env['REQUEST_METHOD'] && i[:request_path] == env['PATH_INFO']}
       if route
         mapping = route[:mapping]
         env.merge!(controller_action(mapping))
