@@ -13,6 +13,14 @@ module Frack
       end
     end
 
+    def redirect(location)
+      [
+        [],
+        302,
+        { 'Location' => location }
+      ]
+    end
+    
     def render_template(path, &block)
       Tilt.new("app/views/#{path}.html.erb").render(self,&block)
     end
