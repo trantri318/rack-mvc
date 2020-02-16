@@ -83,5 +83,4 @@ test:
 production:
   <<: *default
   database: mvc_production
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

@@ -20,7 +20,7 @@ module Frack
         { 'Location' => location }
       ]
     end
-    
+
     def render_template(path, &block)
       Tilt.new("app/views/#{path}.html.erb").render(self,&block)
     end
