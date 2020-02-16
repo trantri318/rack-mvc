@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
   validates :email, presence:true
   validates_format_of :email,
     :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    puts 'welcome email'
+  end
 end

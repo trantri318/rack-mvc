@@ -9,6 +9,7 @@ require 'erb'
 require 'active_record'
 require 'byebug'
 
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 require_relative '../config/database'
 
 require_relative '../app/validators/category_validator'
