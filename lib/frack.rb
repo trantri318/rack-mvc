@@ -2,6 +2,7 @@ $LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
 ENV['APP_ENV'] || 'development'
 
+require 'dotenv/load'
 require 'rack'
 require 'tilt'
 require 'erb'
