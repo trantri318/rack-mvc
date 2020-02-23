@@ -28,3 +28,4 @@ end
 
 require_relative '../app/controllers/users_controller'
 require_relative '../app/controllers/welcome_controller'
+require_relative '../app/controllers/products_controller'

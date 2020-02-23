@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :products
 
   unless ActiveRecord::Base.connection.table_exists?('users')
     connection.create_table :users do |t|
