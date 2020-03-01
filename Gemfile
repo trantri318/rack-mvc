@@ -9,6 +9,7 @@ gem 'pg'
 gem 'bcrypt'
 gem 'activerecord'
 gem 'dotenv'
+gem 'actionmailer'
 gem "letter_opener", :group => :development
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 

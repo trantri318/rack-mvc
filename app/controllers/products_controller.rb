@@ -1,10 +1,12 @@
 class ProductsController < Frack::BaseController
   def index # GET
     @products = Product.all
+    render('products/index')
   end
 
   def new # GET
     @product = Product.new
+    render('products/new')
   end
 
    def create # POST

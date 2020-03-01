@@ -8,6 +8,21 @@ require 'tilt'
 require 'erb'
 require 'active_record'
 require 'byebug'
+require 'action_mailer'
+ActionMailer::Base.prepend_view_path(File.expand_path('../app/views/', __dir__))
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+  domain: 'localhost:3000',
+  address:        "smtp.sendgrid.net",
+  port:            587,
+  authentication: :plain,
+  user_name:      'apikey',
+  password:       ENV['SENDGRID_API_KEY']
+}
+
+require_relative '../app/mailers/application_mailer'
+require_relative '../app/mailers/user_mailer'
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 require_relative '../config/database'

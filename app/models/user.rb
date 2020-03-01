@@ -19,6 +19,6 @@ class User < ActiveRecord::Base
   private
 
   def send_welcome_email
-    puts 'welcome email'
+    UserMailer.with(user: self).welcome_email.deliver_now
   end
 end
